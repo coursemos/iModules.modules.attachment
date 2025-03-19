@@ -6,9 +6,9 @@
  * 첨부된 파일데이터를 관리하고, 첨부파일 업로드가 필요한 곳에 파일업로더를 제공한다.
  *
  * @file /modules/attachment/Attachment.php
- * @author Arzz <arzz@arzz.com>
+ * @author sungjin <esung246@naddle.net>
  * @license MIT License
- * @modified 2024. 10. 9.
+ * @modified 2025. 3. 19.
  */
 namespace modules\attachment;
 class Attachment extends \Module
@@ -1046,7 +1046,7 @@ class Attachment extends \Module
             if ($type == 'jpg') {
                 @ImageJPEG($thumb, $thumbPath, 100) or ($result = false);
             } elseif ($type == 'gif') {
-                @ImageGIF($thumb, $thumbPath, 100) or ($result = false);
+                @ImageGIF($thumb, $thumbPath) or ($result = false);
             } elseif ($type == 'png') {
                 @imagePNG($thumb, $thumbPath) or ($result = false);
             } else {
@@ -1068,7 +1068,7 @@ class Attachment extends \Module
     /**
      * 파일 라우팅을 처리한다.
      *
-     * @param Route $route 현재경로
+     * @param \Route $route 현재경로
      * @param string $request 요청파일경로 (drafts, attachments, files)
      * @param string $type 파일접근종류 (origin, view, thumbnail, download)
      * @param int $file_id 파일고유값
