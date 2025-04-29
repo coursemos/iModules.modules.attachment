@@ -493,7 +493,7 @@ class Attachment
         } else {
             $name = $this->_name;
         }
-        $route = '/files/' . $type . '/' . $this->_id . '/' . rawurlencode($name);
+        $route = '/files/' . $type . '/' . $this->_id . '/' . urlencode($name);
 
         $url = '';
         if ($is_full_url === true) {
