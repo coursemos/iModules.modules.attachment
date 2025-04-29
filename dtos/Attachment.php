@@ -5,9 +5,9 @@
  * 첨부파일모듈에 의해 첨부된 파일 구조체를 정의한다.
  *
  * @file /modules/attachment/dtos/Attachment.php
- * @author Arzz <arzz@arzz.com>
+ * @author sungjin <esung246@naddle.net>
  * @license MIT License
- * @modified 2024. 10. 8.
+ * @modified 2025. 4. 29.
  */
 namespace modules\attachment\dtos;
 class Attachment
@@ -493,7 +493,7 @@ class Attachment
         } else {
             $name = $this->_name;
         }
-        $route = '/files/' . $type . '/' . $this->_id . '/' . urlencode($name);
+        $route = '/files/' . $type . '/' . $this->_id . '/' . rawurlencode($name);
 
         $url = '';
         if ($is_full_url === true) {
